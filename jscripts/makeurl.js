@@ -1,4 +1,4 @@
-function GetMyDomain()
+﻿function GetMyDomain()
 {
 	var a = document.createElement("a");
 	a.href = window.location.href;
