@@ -1,9 +1,10 @@
 ﻿function GetMyDomain()
 {
-	var a = document.createElement("a");
+	return '3s3s.ru';
+	/*var a = document.createElement("a");
 	a.href = window.location.href;
 
-	return a.host;	
+	return a.host;	*/
 }
 function deleteAllCookies(strDot) {
 
@@ -117,7 +118,7 @@ function UnblockURL(strBlocked)
 	{
 		if (a.host == RKN_List[n])
 		{
-			$.post("/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
+			$.post("http://"+GetMyDomain()+"/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
 						function(data, status)
 						{
 							if (data.result != true || data.short.length == 0)
