@@ -29,7 +29,7 @@ $(function()
 	{
 		alert('Domain 3s3s.org has been blocked in Russia ((( You can use 3s3s.ru for a while.');
 	}*/
-	
+		
 	deleteAllCookies("");
 
 	$( "#accordion" ).accordion({ header: "h2", heightStyle: "content" });
@@ -65,7 +65,11 @@ $(function()
 				return rows;
 			}
 			
-			$.post("/make_short_url.ssp", { action: "make", long: $("#long_url").val(), alias: $("#custom_alias").val() }, 
+			var proto = "http://";
+			if (window.location.protocol == "https")
+				proto = "https://";
+				
+			$.post(proto+GetMyDomain()+"/make_short_url.ssp", { action: "make", long: $("#long_url").val(), alias: $("#custom_alias").val() }, 
 				function(data, status)
 				{
 					if (data.result != true)
@@ -118,7 +122,11 @@ function UnblockURL(strBlocked)
 	{
 		if (a.host == RKN_List[n])
 		{
-			$.post("//"+GetMyDomain()+"/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
+			var proto = "http://";
+			if (window.location.protocol == "https")
+				proto = "https://";
+			
+			$.post(proto+GetMyDomain()+"/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
 						function(data, status)
 						{
 							if (data.result != true || data.short.length == 0)
