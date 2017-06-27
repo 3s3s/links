@@ -118,7 +118,7 @@ function UnblockURL(strBlocked)
 	{
 		if (a.host == RKN_List[n])
 		{
-			$.post("http://"+GetMyDomain()+"/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
+			$.post("//"+GetMyDomain()+"/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
 						function(data, status)
 						{
 							if (data.result != true || data.short.length == 0)
