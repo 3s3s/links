@@ -66,7 +66,7 @@ $(function()
 			}
 			
 			var proto = "http://";
-			if (window.location.protocol == "https")
+			if (window.location.protocol == "https:")
 				proto = "https://";
 				
 			$.post(proto+GetMyDomain()+"/make_short_url.ssp", { action: "make", long: $("#long_url").val(), alias: $("#custom_alias").val() }, 
@@ -123,7 +123,7 @@ function UnblockURL(strBlocked)
 		if (a.host == RKN_List[n])
 		{
 			var proto = "http://";
-			if (window.location.protocol == "https")
+			if (window.location.protocol == "https:")
 				proto = "https://";
 			
 			$.post(proto+GetMyDomain()+"/make_short_url.ssp", { action: "make_temp", long: a.href, alias: "" }, 
