@@ -60,7 +60,7 @@ $(function()
 				var rows = "";
 				for (var i=0; i<data.short.length; i++)
 				{
-					rows += "<tr><td>http://" + data.short[i] + "."+GetMyDomain()+"</td></tr>";
+					rows += "<tr><td>https://" + data.short[i] + "."+GetMyDomain()+"</td></tr>";
 				}
 				return rows;
 			}
